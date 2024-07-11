@@ -59,3 +59,18 @@ iface eth0 inet static
             netmask 255.255.255.0
             gateway 192.168.1.1   #IP fa0/0 Router
 ```
+Salviamo e chiudiamo il file. Riavviamo l'interfaccia di rete con il seguente comando:
+```bash
+sudo systemctl restart networking
+```
+Per verificare la modifica, andiamo a digitare il seguente comando:
+```bash
+ifconfig
+```
+Se è andato tutto bene, dovremmo vedere che eth0 è configurato con l'IP che le abbiamo dato.
+![5](https://github.com/user-attachments/assets/3e7388b9-be7f-4a43-9683-dfdebd1179a5)
+![6](https://github.com/user-attachments/assets/f1ee6010-cf60-41aa-9dfc-8c3b8bbee139)
+NOTA: Facciamo molta attenzione al MAC address dell'attaccante, perché servirà notarlo durante l'esecuzione dell'attacco:
+```bash
+ether 08:00:27:a3:d5:48
+```
