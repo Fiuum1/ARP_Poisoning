@@ -95,5 +95,24 @@ Per confermare ciò, basta fare un ping al router e osservare che effettivamente
 
 # Esecuzione dell'attacco
 
+Riprendiamo la topologia di rete:
+![10](https://github.com/user-attachments/assets/16ed1759-a90d-4968-9dd5-6ea71bc6a011)
+
+Ora apriamo la macchina virtuale dell'attaccante (KaliAttacker), apriamo un terminale e digitiamo:
+```bash
+ettercap -G  #Per aprire ettercap in modalità grafica
+```
+Vedremo aprirsi una finestra sul Desktop. Clicchiamo sulla spunta per far partire lo sniffing:
+![11](https://github.com/user-attachments/assets/d03b590d-eba5-4f68-a926-bbaab59c09c3)
+
+Ora apriamo apriamo il menù a tendina cliccando sui tre pallini e selezioniamo e 'Hosts', poi 'Scan for hosts'.
+Dopo la scansione, riapriamo il menù a tendina e clicchiamo su 'Hosts', dunque 'Hosts list'.
+Ecco che troveremo due host, uno è il router (Router, 192.168.1.1), l'altro è la vittima (KaliVictim, 192.168.1.101):
+![12](https://github.com/user-attachments/assets/71316649-899e-4dc7-b76f-936a87a89bfa)
+
+Selezionamo la macchina virtuale KaliVictim e impostiamolo come Target 1. Aggiungiamo invece il Router come Target 2.
+Ora clicchiamo sull'icona del globo in alto a destra (1), selezioniamo 'ARP Poisoning' (2) e poi premiamo 'OK' (3):
+
+
 
 
