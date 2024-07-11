@@ -1,4 +1,4 @@
-# ARP_Poisoning
+![25](https://github.com/user-attachments/assets/57960aab-6a6b-417e-86d1-539e0fe90a11)# ARP_Poisoning
 
 
 # Introduzione
@@ -129,7 +129,9 @@ Vediamo ora nel dettaglio cosa succede durante l'attacco...
 Per poter osservare gli effetti dell'attacco, abbiamo bisogno di un software che ci consenta di fare Sniffing sulle singole interfacce di rete (nel nostro caso eth0 per entrambe le VM) e di analizzare i pacchetti. Prendiamo come esempio Wireshark.
 Avviamo Wireshark sia sulla macchina attaccante sia sulla macchina vittima, selezioniamo l'interfaccia eth0 e avviamo la cattura.
 
+
 **KaliAttacker:**
+
 ![15](https://github.com/user-attachments/assets/014efe01-c880-4f62-9329-2c3f5bbfc1e2)
 Vediamo chiaramente una coppia di pacchetti che viene periodicamente inviata dall'attaccante.
 
@@ -142,13 +144,48 @@ In questo modo, tutto il traffico che dovrebbe essere inviato direttamente a Kal
 ![17](https://github.com/user-attachments/assets/e08223cf-786a-4d95-b0a9-52467edc143d)
 
 
+
 **KaliVictim:**
+
 ![18](https://github.com/user-attachments/assets/12319053-c881-4a69-bc1b-c625bc11935a)
 La vittima, invece, riceve periodicamente lo stesso pacchetto, che è inviato dall'attaccante per indurla a credere che il router abbia 08:00:27:a3:d5:48 come MAC Address, che sappiamo essere il MAC Address della scheda di rete di KaliAttacker. 
 Le conseguenze le abbiamo espresse poc'anzi.
 
 
+# Verifica dell'attacco
+
+Per verificare la riuscita dell'attacco, proviamo a effettuare un ping da KaliVictim verso il router:
+```bash
+ping 192.168.1.1
+```
+
+**KaliVictim:**
+La vittima è convinta di pingare il router, ma come possiamo vedere sta parlando direttamente con l'attaccante:
+![19](https://github.com/user-attachments/assets/b4588c1c-ba12-41e2-879e-335275933c18)
+![20](https://github.com/user-attachments/assets/b85d374e-e1d8-49b1-9e67-b7783c59e3a3)
 
 
+
+**KaliAttacker:**
+L'attaccante, d'altro canto, risponde al ping come se fosse il router. 
+Notare come l'attaccante faccia un ping a sua volta verso il router, per poter poi rispondere alla vittima:
+![21](https://github.com/user-attachments/assets/8e6c0577-2c3e-4098-b4b4-6708bc259220)
+![22](https://github.com/user-attachments/assets/911680c0-5b52-47e9-b06b-98e23546c955)
+![23](https://github.com/user-attachments/assets/0b19a438-0f5e-4c33-a357-f140d7759430)
+
+
+
+
+Un modo più formale per notare che l'attacco ha avuto effetto è andare a valutare le tabelle ARP di KaliAttacker e KaliVictim.
+
+**KaliVictim:**
+![24](https://github.com/user-attachments/assets/2480df7f-5f0c-4a15-9d42-085a029ef7ae)
+La vittima si ritrova con due indirizzi IP diversi associati allo stesso MAC Address.
+
+
+
+**KaliAttacker:**
+![25](https://github.com/user-attachments/assets/9054ab71-f069-46c6-b8f5-570cdc8ee85e)
+D'altro canto, la tabella ARP dell'attaccante non viene in alcun modo modificata durante l'attacco.
 
 
