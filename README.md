@@ -38,7 +38,15 @@ NOTA: Per questo esempio, le configurazioni sono le seguenti:
             eth1 < = > eth0 KaliAttacker
             eth2 < = > fa0/0 Router
 -  Router:  fa0/0 < = > eth2 Switch
+
 A questo punto non resta che avviare tutti i nodi premendo play in alto:
 ![4](https://github.com/user-attachments/assets/54d6d9ea-362d-4b38-8851-7a390f663fdc)
 
+Si avvieranno automaticamente anche le VMs, e ora non resta che impostare i rispettivi indirizzi statici.
+
+
+
+Per fare ciò, andiamo nel terminale delle singole VM e digitiamo il seguente comando:
+'''bash
+sudo /etc/network/interfaces
 
