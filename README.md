@@ -47,6 +47,5 @@ Si avvieranno automaticamente anche le VMs, e ora non resta che impostare i risp
 
 
 Per fare ciò, andiamo nel terminale delle singole VM e digitiamo il seguente comando:
-'''
+```bash
 sudo /etc/network/interfaces
-'''
