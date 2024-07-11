@@ -126,6 +126,29 @@ Vediamo ora nel dettaglio cosa succede durante l'attacco...
 
 # Analisi dell'attacco
 
+Per poter osservare gli effetti dell'attacco, abbiamo bisogno di un software che ci consenta di fare Sniffing sulle singole interfacce di rete (nel nostro caso eth0 per entrambe le VM) e di analizzare i pacchetti. Prendiamo come esempio Wireshark.
+Avviamo Wireshark sia sulla macchina attaccante sia sulla macchina vittima, selezioniamo l'interfaccia eth0 e avviamo la cattura.
+
+**KaliAttacker:**
+![15](https://github.com/user-attachments/assets/014efe01-c880-4f62-9329-2c3f5bbfc1e2)
+Vediamo chiaramente una coppia di pacchetti che viene periodicamente inviata dall'attaccante.
+
+Il primo pacchetto serve per far sì che la vittima sia convinta che il router possegga come MAC Address 08:00:27:a3:d5:48, che è in realtà il MAC Address della scheda di rete di KaliAttacker.
+In questo modo, tutto il traffico che dovrebbe essere indirizzato al router passa prima per l'attaccante, e poi arriva tramite lui al router.
+![16](https://github.com/user-attachments/assets/d6fc360d-b0a4-482e-b5e1-03a4eedd27b3)
+
+Il secondo pacchetto, invece, server per far sì che il router sia convinto che la vittima possegga come MAC Address 08:00:27:a3:d5:48, che è in realtà il MAC Address della scheda di rete di KaliAttacker.
+In questo modo, tutto il traffico che dovrebbe essere inviato direttamente a KaliVictim passa prima per KaliAttacker, e poi arriva tramite lui al router.
+![17](https://github.com/user-attachments/assets/e08223cf-786a-4d95-b0a9-52467edc143d)
+
+
+**KaliVictim:**
+![18](https://github.com/user-attachments/assets/12319053-c881-4a69-bc1b-c625bc11935a)
+La vittima, invece, riceve periodicamente lo stesso pacchetto, che è inviato dall'attaccante per indurla a credere che il router abbia 08:00:27:a3:d5:48 come MAC Address, che sappiamo essere il MAC Address della scheda di rete di KaliAttacker. 
+Le conseguenze le abbiamo espresse poc'anzi.
+
+
+
 
 
 
