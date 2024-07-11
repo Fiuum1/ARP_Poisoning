@@ -112,7 +112,17 @@ Ecco che troveremo due host, uno è il router (Router, 192.168.1.1), l'altro è 
 ![12](https://github.com/user-attachments/assets/71316649-899e-4dc7-b76f-936a87a89bfa)
 
 Selezionamo la macchina virtuale KaliVictim e impostiamolo come Target 1. Aggiungiamo invece il Router come Target 2.
-Ora clicchiamo sull'icona del globo in alto a destra (1), selezioniamo 'ARP Poisoning' (2) e poi premiamo 'OK' (3):
+Ora clicchiamo sull'icona del globo in alto a destra, selezioniamo 'ARP Poisoning' e poi premiamo 'OK':
+![13](https://github.com/user-attachments/assets/ed57bb0c-6e42-45b1-9f9c-aab5922afd9e)
+
+A questo punto l'attacco ha inizio!
+![14](https://github.com/user-attachments/assets/f70f4c20-7de5-4f8d-984b-0cc5d7e55c76)
+
+
+Vediamo ora nel dettaglio cosa succede durante l'attacco...
+
+
+# Analisi dell'attacco
 
 
 
