@@ -7,7 +7,7 @@ Formalmente, l'ARP Poisoning (o ARP spoofing) è un attacco di rete in cui un ma
 # Premesse
 Per effettuare un attacco di questo tipo, bisogna creare un ambiente ISOLATO in cui configurare due VMs Kali Linux (KaliAttacker e KaliVictim), uno Switch per connettere le due macchine e un Router, il quale sarà il default gateway per entrambi i dispositivi. 
 
-# Set-up generale
+# Configurazione VM e topologia
 Innanzitutto, bisogna configurare l'ambiente.
 Per quanto riguarda le macchine virtuali, utilizziamo una piattaforma di virtualizzazione (personalmente ho utilizzato VirtualBox, ma qualsiasi sw è ben accetto) per creare le macchine virtuali necessarie all'attacco.
 
@@ -50,8 +50,9 @@ Per fare ciò, andiamo nel terminale delle singole VM e digitiamo il seguente co
 ```bash
 sudo /etc/network/interfaces
 ```
+
 In questo modo si accede al file che definisce tutte le interfacce di rete della macchina.
-Aggiungiamo dunque un nuovo record all'interno di questo file:
+Aggiungiamo dunque un nuovo record all'interno di questo file :
 ```bash
 auto eth0
 iface eth0 inet static
@@ -59,14 +60,18 @@ iface eth0 inet static
             netmask 255.255.255.0
             gateway 192.168.1.1   #IP fa0/0 Router
 ```
+Analogo per l'attaccante, ma con IP 192.168.1.102 (sono IP di esempio).
+
 Salviamo e chiudiamo il file. Riavviamo l'interfaccia di rete con il seguente comando:
 ```bash
 sudo systemctl restart networking
 ```
+
 Per verificare la modifica, andiamo a digitare il seguente comando:
 ```bash
 ifconfig
 ```
+
 Se è andato tutto bene, dovremmo vedere che eth0 è configurato con l'IP che le abbiamo dato.
 ![5](https://github.com/user-attachments/assets/3e7388b9-be7f-4a43-9683-dfdebd1179a5)
 ![6](https://github.com/user-attachments/assets/e9594b21-5c24-402d-8f63-80167814276e)
@@ -75,3 +80,20 @@ NOTA: Facciamo molta attenzione al MAC address dell'attaccante, perché servirà
 ```bash
 ether 08:00:27:a3:d5:48
 ```
+
+
+# Configurazione Router
+Per quanto riguarda il Router, dobbiamo configurare la sua interfaccia fa0/0 in modo che abbia l'indirizzo IP che abbiamo impostato.
+Per fare ciò dobbiamo aprire la console del Router da GNS3 (facendo doppio click sull'icona oppure tasto destro, 'Console') ed eseguire una serie di comandi, che ho riportato nel seguente screenshot:
+![7](https://github.com/user-attachments/assets/18afbe0f-b89d-4772-9ee8-8f1299977caf)
+
+Come possiamo notare, l'IP di fa0/0 è stato impostato correttamente, e ora le macchine virtuali riescono a vedere il router.
+Per confermare ciò, basta fare un ping al router e osservare che effettivamente è raggiungibile:
+![8](https://github.com/user-attachments/assets/718207c0-d33d-4dc0-be61-8e132c3714e5)
+![9](https://github.com/user-attachments/assets/d4db4546-3ff4-48a3-a727-273438d8eb60)
+
+
+# Esecuzione dell'attacco
+
+
+
