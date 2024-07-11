@@ -96,6 +96,7 @@ Per confermare ciò, basta fare un ping al router e osservare che effettivamente
 # Esecuzione dell'attacco
 
 Riprendiamo la topologia di rete:
+
 ![10](https://github.com/user-attachments/assets/16ed1759-a90d-4968-9dd5-6ea71bc6a011)
 
 Ora apriamo la macchina virtuale dell'attaccante (KaliAttacker), apriamo un terminale e digitiamo:
