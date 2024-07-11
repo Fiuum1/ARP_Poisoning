@@ -49,3 +49,13 @@ Si avvieranno automaticamente anche le VMs, e ora non resta che impostare i risp
 Per fare ciò, andiamo nel terminale delle singole VM e digitiamo il seguente comando:
 ```bash
 sudo /etc/network/interfaces
+```
+In questo modo si accede al file che definisce tutte le interfacce di rete della macchina.
+Aggiungiamo dunque un nuovo record all'interno di questo file:
+```bash
+auto eth0
+iface eth0 inet static
+            address 192.168.1.101 #IP Vittima
+            netmask 255.255.255.0
+            gateway 192.168.1.1   #IP fa0/0 Router
+```
