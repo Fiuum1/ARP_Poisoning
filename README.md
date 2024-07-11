@@ -116,7 +116,9 @@ Ora clicchiamo sull'icona del globo in alto a destra, selezioniamo 'ARP Poisonin
 ![13](https://github.com/user-attachments/assets/ed57bb0c-6e42-45b1-9f9c-aab5922afd9e)
 
 A questo punto l'attacco ha inizio!
+
 ![14](https://github.com/user-attachments/assets/f70f4c20-7de5-4f8d-984b-0cc5d7e55c76)
+
 
 
 Vediamo ora nel dettaglio cosa succede durante l'attacco...
