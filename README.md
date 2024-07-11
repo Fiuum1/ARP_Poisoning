@@ -1,6 +1,3 @@
-![25](https://github.com/user-attachments/assets/57960aab-6a6b-417e-86d1-539e0fe90a11)# ARP_Poisoning
-
-
 # Introduzione
 Formalmente, l'ARP Poisoning (o ARP spoofing) è un attacco di rete in cui un malintenzionato invia falsi messaggi ARP (Address Resolution Protocol) per associare il proprio indirizzo MAC all'indirizzo IP di un altro dispositivo, permettendogli di intercettare, modificare o interrompere il traffico di rete tra i dispositivi target.
 
