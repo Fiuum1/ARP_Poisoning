@@ -11,10 +11,10 @@ Per effettuare un attacco di questo tipo, bisogna creare un ambiente ISOLATO in 
 Innanzitutto, bisogna configurare l'ambiente.
 Per quanto riguarda le macchine virtuali, utilizziamo una piattaforma di virtualizzazione (personalmente ho utilizzato VirtualBox, ma qualsiasi sw è ben accetto) per creare le macchine virtuali necessarie all'attacco.
 
-Aggiungiamo le macchine virtuali dalla sezione 'Preferences' in 'Edit', andiamo su 'VirtualBox VMs' e clicchiamo su 'New', 'Next' e poi selezioniamo la nostra macchina virtuale (una per volta):
-![1](https://github.com/user-attachments/assets/b43d331a-0d60-4d6f-8fc7-6a597801200e)
+Aggiungiamo le macchine virtuali dalla sezione 'Preferences' in 'Edit', andiamo su 'VirtualBox VMs' (1) e clicchiamo su 'New' (2), 'Next' e poi selezioniamo la nostra macchina virtuale (3), dopodiché clicchiamo Finish (4):
+![1](https://github.com/user-attachments/assets/63fa5847-2699-49fb-9f54-ea50d4cb868c)
 
-Dopodiché clicchiamo Finish, e andiamo alla sezione Edit premendo l'apposito pulsante in basso a destra:
+Ora andiamo alla sezione Edit premendo l'apposito pulsante in basso a destra (5):
 ![2](https://github.com/user-attachments/assets/1de4165c-0dff-4e17-98d9-deb9e0410713)
 
 
