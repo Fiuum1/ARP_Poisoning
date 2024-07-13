@@ -180,7 +180,7 @@ Notare come l'attaccante faccia un ping a sua volta verso il router, per poter p
 
 
 
-Un modo più formale per notare che l'attacco ha avuto effetto è andare a valutare le tabelle ARP di KaliAttacker e KaliVictim.
+Formalmente, per notare che l'attacco ha avuto effetto è utile andare ad analizzare le tabelle ARP di KaliAttacker e KaliVictim.
 
 **KaliVictim:**
 
@@ -194,6 +194,6 @@ La vittima si ritrova con due indirizzi IP diversi associati allo stesso MAC Add
 
 ![25](https://github.com/user-attachments/assets/9054ab71-f069-46c6-b8f5-570cdc8ee85e)
 
-D'altro canto, la tabella ARP dell'attaccante non viene in alcun modo modificata durante l'attacco.
+La tabella ARP dell'attaccante non viene in alcun modo modificata durante l'attacco.
 
 
