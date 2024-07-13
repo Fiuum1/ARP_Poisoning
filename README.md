@@ -7,7 +7,7 @@ L'ARP Poisoning (o ARP spoofing) è un attacco di rete in cui un malintenzionato
 
 # Premesse
 Per effettuare un attacco di questo tipo, bisogna creare un ambiente ISOLATO in cui configurare due VMs Kali Linux (KaliAttacker e KaliVictim), uno Switch per connettere le due macchine e un Router, il quale sarà il default gateway per entrambi i dispositivi. 
-
+Supponiamo che la GNS3 VM sia già correttamente configurata e che il router sia già stato aggiunto ai nodi di GNS3.
 ![gettyimages-1369572069-640x640](https://github.com/user-attachments/assets/78773d21-f985-444e-abd5-971376497b90)
 
 
