@@ -105,7 +105,7 @@ Riprendiamo la topologia di rete:
 
 Ora apriamo la macchina virtuale dell'attaccante (KaliAttacker), apriamo un terminale e digitiamo:
 ```bash
-ettercap -G  #Per aprire ettercap in modalità grafica
+sudo ettercap -G  #Per aprire ettercap in modalità grafica
 ```
 Vedremo aprirsi una finestra sul Desktop. Clicchiamo sulla spunta per far partire lo sniffing:
 ![11](https://github.com/user-attachments/assets/d03b590d-eba5-4f68-a926-bbaab59c09c3)
